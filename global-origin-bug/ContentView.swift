@@ -9,8 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ScrollView {
+            GeometryReader { gr in
+                Text("\(gr.frame(in: .global).origin.y)")
+                    .padding()
+                    .offset(y: 200)
+            }
+            .frame(width: 500, height: 500)
+        }
+        .frame(height: 300)
     }
 }
 
